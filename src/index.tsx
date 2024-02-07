@@ -24,6 +24,67 @@ const ImageFileTransformer = ImageFileTransformerModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ImageFileTransformer.multiply(a, b);
+interface StaticOptions {
+  width?: number;
+  height?: number;
+  outFormat?: string;
+  mode?: string;
+  quality?: number;
 }
+
+function staticImageBatch(uris:string | string[], userOptions: StaticOptions): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const uriArray = Array.isArray(uris) ? uris : [uris];
+    
+    ImageFileTransformer.StaticBatch(uriArray, userOptions)
+      .then((r) => {
+        resolve(r);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+function animatedImageBatch(uris:string | string[], userOptions: StaticOptions): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const uriArray = Array.isArray(uris) ? uris : [uris];
+    
+    
+    ImageFileTransformer.AnimatedBatch(uriArray, userOptions)
+      .then((r) => {
+        resolve(r);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+function getImageType(uris: string | string[]): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const uriArray = Array.isArray(uris) ? uris : [uris];
+
+    ImageFileTransformer.getImageType(uriArray)
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+// 
+export const Transform = {
+  static : staticImageBatch, 
+  animated : animatedImageBatch,
+  ScaleMode : ImageFileTransformer.getConstants().Scale,
+  FormatType : ImageFileTransformer.getConstants().Format,
+  getImageType : getImageType,
+  clearCache : ImageFileTransformer.clearCache()
+}
+
+
+// TODO: REMOVE this
+export default ImageFileTransformer;

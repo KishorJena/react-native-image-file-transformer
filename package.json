@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-file-transformer",
-  "version": "0.1.0",
+  "version": "1.0.5-alpha.0",
   "description": "Scale, Convert & Compress animated & static image files",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -26,13 +26,10 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-image-file-transformer-example",
-    "test": "jest",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "bob build",
-    "release": "release-it"
+    "build": "dv-scripts build && cp src/index.js.flow dist/index.js.flow && cp src/index.js.flow dist/index.cjs.js.flow",
+    "lint": "dv-scripts lint",
+    "release": "dv-scripts release",
+    "test": "dv-scripts test"
   },
   "keywords": [
     "react-native",
