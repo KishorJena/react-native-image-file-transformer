@@ -1,6 +1,11 @@
 # react-native-image-file-transformer
 
+<div>
+<img src="logo200.png" />
+</div>
 Scale, Convert & Compress animated & static image files
+
+Supported formats: GIF, Animated Webp, PNG, JPG, WEBP
 
 [ ⚠️ Under Developmenet ]
 ## Installation
