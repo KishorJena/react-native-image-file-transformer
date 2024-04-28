@@ -47,7 +47,7 @@ import java.util.concurrent.Executors;
 
 public class ImageFileTransformerModule extends ReactContextBaseJavaModule {
   public static String TAG = ImageFileTransformerModule.class.getSimpleName();
-  public static final String NAME = "ImageResizer";
+  public static final String NAME = "ImageFileTransformer";
   // Assuming you have a class variable/member
   private final ExecutorService executorService = Executors.newSingleThreadExecutor();
 //  private final ExecutorService executorService = Executors.newFixedThreadPool(4);
