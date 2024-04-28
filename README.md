@@ -53,9 +53,13 @@ Misc:
 ```js
 await Transform.getImageType(uri)
 await Transform.getImageType([uri1, uri2, ...])
+
+// Output
+//[{"extention": "png", "isAnimated": false, "type": "PNG_A", "uri": "/storage/emulated/..."}] 
+```
+```js
 await Transform.clearCache()
 ```
-
 ## Example:
 ```js
 Transform.animated(uris, { 
