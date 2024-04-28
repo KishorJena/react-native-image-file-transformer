@@ -1,13 +1,17 @@
 # react-native-image-file-transformer
 
+## convert, compress, scale any animated or static image 
+
 <div>
 <img src="logo200.png" />
 </div>
-Scale, Convert & Compress animated & static image files
 
-Supported formats: GIF, Animated Webp, PNG, JPG, WEBP
+`react-native-image-file-transformer` is a React Native module that provides functionality for transforming and manipulating image files. 
 
 [ ⚠️ Under Developmenet ]
+
+Platform support: Android
+
 ## Installation
 
 ```sh
@@ -16,22 +20,44 @@ npm install react-native-image-file-transformer
 
 ## Usage
 
+Import:
 ```js
 import { Transform } from 'react-native-image-file-transformer';
+```
 
-// ...
-
+Operations:
+```js
 await Transform.static(uri, options);
 await Transform.animated(uri, options);
 await Transform.static([uri2, uri2, ], options);
 await Transform.animated([uri1, uri2, ], options);
+```
 
-await Transform.getImageType(uri or [uri1, uri2, ...])
+Constants:
+```js
+ScaleMode:
+Transform.ScaleMode.CROP
+Transform.ScaleMode.STRETCH
+Transform.ScaleMode.FIT_CENTER
+
+FormatType:
+Transform.FormatType.JPEG
+Transform.FormatType.PNG
+Transform.FormatType.WEBP
+Transform.FormatType.GIF
+Transform.FormatType.AWEBP
+Transform.FormatType.UNKNOWN
+ 
+```
+Misc:
+```js
+await Transform.getImageType(uri)
+await Transform.getImageType([uri1, uri2, ...])
 await Transform.clearCache()
+```
 
-Transform.ScaleMode // will give constants to use in options
-Transform.FormatType // will give constants to use in options
-
+## Example:
+```js
 Transform.animated(uris, { 
   width:100, // default will be taken from image
   height:100, // default will be taken from image
@@ -46,12 +72,12 @@ Transform.animated(uris, {
 .catch(e=>{log('error ',e)})
 ```
 
+Contributing
+If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the project's GitHub repository.
+
+You can follow/contact me on
+X (twitter) : x.com/heyKSR
 
 ## License
 
 MIT
-
----
-
-Feel free to contact for any query 
-https://twitter.com/heyKSR
