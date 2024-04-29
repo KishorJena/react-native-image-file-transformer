@@ -27,10 +27,8 @@ import { Transform } from 'react-native-image-file-transformer';
 
 Operations:
 ```js
-await Transform.static(uri, options);
-await Transform.animated(uri, options);
-await Transform.static([uri2, uri2, ], options);
-await Transform.animated([uri1, uri2, ], options);
+await Transform.static([uri2, uri2,... ], options);
+await Transform.animated([uri1, uri2,... ], options);
 ```
 
 Constants:
@@ -51,7 +49,6 @@ Transform.FormatType.UNKNOWN
 ```
 Misc:
 ```js
-await Transform.getImageType(uri)
 await Transform.getImageType([uri1, uri2, ...])
 
 // Output
@@ -66,7 +63,7 @@ Transform.animated(uris, {
   width:100, // default will be taken from image
   height:100, // default will be taken from image
   quality:70,  // default 100
-  mode:Transform.ScaleMode.FIT_CENTER, // default FIT_CENTER
+  scaleMode:Transform.ScaleMode.FIT_CENTER, // default FIT_CENTER
   targetFormat:Transform.FormatType.AWEBP, // default JPGE/GIF
 //   minDelay:80, (ms)
 //   maxDelay:1000, (ms)

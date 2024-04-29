@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-file-transformer",
-  "version": "1.0.8-alpha.0",
+  "version": "1.2.8-alpha.0",
   "description": "Scale, Convert & Compress animated & static image files",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

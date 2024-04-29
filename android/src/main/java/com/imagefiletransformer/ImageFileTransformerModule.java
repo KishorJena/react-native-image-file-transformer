@@ -102,7 +102,7 @@ public class ImageFileTransformerModule extends ReactContextBaseJavaModule {
 
 
       for (int i = 0; i < uris.size(); i++) {
-        String uri = uris.getString(i);
+        String uri = uris.getMap(i).getString("uri");
 
         File file = new File(uri);
         if (!file.exists()) continue;

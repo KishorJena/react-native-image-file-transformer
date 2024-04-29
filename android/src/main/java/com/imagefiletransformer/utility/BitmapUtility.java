@@ -72,7 +72,7 @@ public class BitmapUtility {
             return imageToScale;
         }
     }
-    private static Bitmap fitCenter(Bitmap image, int maxWidth, int maxHeight) {
+    private static Bitmap fitCenter_(Bitmap image, int maxWidth, int maxHeight) {
         if (maxHeight > 0 && maxWidth > 0) {
             int width = image.getWidth();
             int height = image.getHeight();
@@ -92,6 +92,47 @@ public class BitmapUtility {
             return image;
         }
     }
+    public static Bitmap fitCenter(Bitmap imageToScale, int destinationWidth, int destinationHeight) {
+        if (destinationHeight > 0 && destinationWidth > 0 && imageToScale != null) {
+            int width = imageToScale.getWidth();
+            int height = imageToScale.getHeight();
+
+            // Calculate the max changing amount and decide which dimension to use
+            float widthRatio = (float) destinationWidth / (float) width;
+            float heightRatio = (float) destinationHeight / (float) height;
+
+            // Use the ratio that will fit the image into the desired sizes
+            float minRatio = Math.min(widthRatio, heightRatio);
+            int finalWidth = (int) Math.floor(width * minRatio);
+            int finalHeight = (int) Math.floor(height * minRatio);
+
+            // Scale given bitmap to fit into the desired area
+            imageToScale = Bitmap.createScaledBitmap(imageToScale, finalWidth, finalHeight, true);
+
+            // Create a bitmap with desired sizes
+            Bitmap scaledImage = Bitmap.createBitmap(destinationWidth, destinationHeight, Bitmap.Config.ARGB_8888);
+
+            Canvas canvas = new Canvas(scaledImage);
+
+            // Draw background color
+            Paint paint = new Paint();
+            paint.setColor(Color.TRANSPARENT); // if transparent then encoder must read ALPHA
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), paint);
+
+            // Calculate the ratios and decide which part will have empty areas (width or height)
+            float ratioBitmap = (float) finalWidth / (float) finalHeight;
+            float destinationRatio = (float) destinationWidth / (float) destinationHeight;
+            float left = ratioBitmap >= destinationRatio ? 0 : (float) (destinationWidth - finalWidth) / 2;
+            float top = ratioBitmap < destinationRatio ? 0 : (float) (destinationHeight - finalHeight) / 2;
+            canvas.drawBitmap(imageToScale, left, top, null);
+
+            return scaledImage;
+        } else {
+            return imageToScale;
+        }
+    }
+
     public static Bitmap crop(Bitmap img, int width, int height) {
         Log.v(TAG,"crop");
 
