@@ -129,6 +129,9 @@
       }
     }
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "eslintConfig": {
     "root": true,
     "extends": [
