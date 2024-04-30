@@ -6,8 +6,8 @@
 
 Platform support: 
 
-[x] Android
-[ ] ios
+- [x] Android
+- [ ] ios
 
 ## Installation
 
@@ -70,12 +70,12 @@ Transform.animated(uris, {
 .catch(e=>{log('error ',e)})
 ```
 
-Contributing
-If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the project's GitHub repository.
+## Contribution
+If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the project's GitHub repository. [CONTRIBUTING.md](CONTRIBUTING.md)
 
-You can follow/contact me on
+### Contact on:
 X (twitter) : x.com/heyKSR
 
 ## License
 
-MIT
+[LICENSE](LICENSE)
