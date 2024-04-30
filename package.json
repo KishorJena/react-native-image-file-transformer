@@ -1,7 +1,7 @@
 {
   "name": "react-native-image-file-transformer",
-  "version": "1.3.0-alpha.0",
-  "description": "Scale, Convert & Compress animated & static image files",
+  "version": "1.0.0-beta.0",
+  "description": "Scale, Convert & Compress animated & static image files. Supports It works with image files rather view and let's you use the transofmred image files.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -33,8 +33,22 @@
   },
   "keywords": [
     "react-native",
-    "ios",
     "android"
+    "react-native",
+    "image"
+    "resize",
+    "convert",
+    "compress",
+    "scale",
+    "animated",
+    "static",
+    "gif",
+    "animated webp",
+    "jpg",
+    "png",
+    "webp",
+    "jpeg",
+    "glide"
   ],
   "repository": {
     "type": "git",

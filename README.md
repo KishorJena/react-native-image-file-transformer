@@ -4,9 +4,10 @@
 
 `react-native-image-file-transformer` is a React Native module that provides functionality for transforming and manipulating image files. 
 
-[ ⚠️ Under Developmenet ]
+Platform support: 
 
-Platform support: Android
+[x] Android
+[ ] ios
 
 ## Installation
 
