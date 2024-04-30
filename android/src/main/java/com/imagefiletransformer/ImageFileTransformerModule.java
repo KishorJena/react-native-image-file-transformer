@@ -153,7 +153,7 @@ public class ImageFileTransformerModule extends ReactContextBaseJavaModule {
         // For each uri
         for(int i=0; i<uris.size(); i++){
           // Start Decode Encode
-          String uri = process(uris.getString(i), options);
+          String uri = process(uris.getMap(i).getString("uri"), options);
 
           // push if ok
           if(uri!=null){
