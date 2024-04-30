@@ -1,10 +1,6 @@
-# react-native-image-file-transformer
 
 ## convert, compress, scale any animated or static image 
-
-<div>
-<img src="logo200.png" />
-</div>
+![image-removebg-preview1-ezgif com-resize (3)](https://github.com/KishorJena/react-native-image-file-transformer/assets/19212755/e8746a4a-9ae0-46ae-994b-b211d38c621b)
 
 `react-native-image-file-transformer` is a React Native module that provides functionality for transforming and manipulating image files. 
 
