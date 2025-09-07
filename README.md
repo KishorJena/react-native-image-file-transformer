@@ -78,7 +78,7 @@ Transform.animated(uris, {
 If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the project's GitHub repository. [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ### Contact on:
-X (twitter) : x.com/heyKSR
+X (twitter) : x.com/KishorJena01
 
 ## License
 
